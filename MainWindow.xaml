@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <ListBox Name="lbx_libri" HorizontalAlignment="Left" Height="383" Margin="10,41,0,0" VerticalAlignment="Top" Width="433"/>
+        <Label Content="Libri Presenti:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Name="lbl_nLibri" Content="" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbx_cerca" HorizontalAlignment="Left" Margin="461,41,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Height="20"/>
+        <Button Name="btn_cerca" Content="Cerca" HorizontalAlignment="Left" Margin="702,41,0,0" VerticalAlignment="Top" Click="btn_cerca_Click"/>
+        <RadioButton Name="rbt_titolo" Content="Titolo" HorizontalAlignment="Left" Margin="461,66,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rbt_autore" Content="Autore" HorizontalAlignment="Left" Margin="531,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Autore:" HorizontalAlignment="Left" Margin="467,130,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbx_autore" HorizontalAlignment="Left" Margin="521,134,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Titolo:" HorizontalAlignment="Left" Margin="467,162,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_titolo" HorizontalAlignment="Left" Margin="515,166,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Anno di pubblicazione:" HorizontalAlignment="Left" Margin="467,196,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_annoDiPubblicazione" HorizontalAlignment="Left" Margin="603,200,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Editore:" HorizontalAlignment="Left" Margin="467,228,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_editore" HorizontalAlignment="Left" Margin="522,232,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="N°Pagine:" HorizontalAlignment="Left" Margin="467,261,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_nPagine" HorizontalAlignment="Left" Margin="534,265,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Name="btn_aggiungiLibro" Content="Aggiungi Libro" HorizontalAlignment="Left" Margin="553,300,0,0" VerticalAlignment="Top" Height="44" Width="110" Click="btn_aggiungiLibro_Click"/>
 
     </Grid>
 </Window>
