@@ -80,7 +80,7 @@ namespace EsercizioBiblioteca
             get => default;
             set
             {
-                if (NPagine <= 0)
+                if (value <= 0)
                 {
                     throw new Exception("Inserire almeno 1 pagina");
                 }

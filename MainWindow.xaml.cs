@@ -23,8 +23,13 @@ namespace EsercizioBiblioteca
         public MainWindow()
         {
             InitializeComponent();
+            biblioteca = new Biblioteca("biblioteca", "via Roma", 8, 16);
+            Libro l = new Libro("a", "a", 2012, "a", 120);
+            biblioteca.AggiungiLibro(l);
+            
             rbt_titolo.IsChecked = true;
-            lbl_nLibri = biblioteca.GetNLibri;
+            lbl_nLibri.Content = biblioteca.GetNLibri();
+            RiempiListBox();
         }
 
         Biblioteca biblioteca;
@@ -33,6 +38,7 @@ namespace EsercizioBiblioteca
         {
             try
             {
+                lbx_libri.Items.Clear();
                 if (rbt_titolo.IsChecked == true)
                 {
                     foreach (Libro l in biblioteca.GetLibriStessoTitolo(tbx_cerca.Text))
@@ -60,18 +66,28 @@ namespace EsercizioBiblioteca
             try
             {
                 Libro libro = new Libro(tbx_autore.Text, tbx_titolo.Text, int.Parse(tbx_annoDiPubblicazione.Text), tbx_editore.Text, int.Parse(tbx_nPagine.Text));
-                biblioteca.AggiungiLibro(Libro);
+                biblioteca.AggiungiLibro(libro);
                 tbx_autore.Text = "";
                 tbx_titolo.Text = "";
                 tbx_annoDiPubblicazione.Text = "";
                 tbx_editore.Text = "";
                 tbx_nPagine.Text = "";
-                lbl_nLibri = biblioteca.GetNLibri;
-
+                lbl_nLibri.Content = biblioteca.GetNLibri();
+                RiempiListBox();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex.Message);
+            }
+        }
+
+        void RiempiListBox()
+        {
+            lbx_libri.Items.Clear();
+            List<Libro> libri = biblioteca.Libri;
+            foreach (Libro l in libri)
+            {
+                lbx_libri.Items.Add(l);
             }
         }
     }

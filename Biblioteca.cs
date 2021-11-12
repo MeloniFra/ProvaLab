@@ -20,6 +20,7 @@ namespace EsercizioBiblioteca
             Indirizzo = indirizzo;
             OraApertura = oraApertura;
             OraChiusura = oraChiusura;
+            _libri = new List<Libro>();
         }
 
         public Biblioteca(string nome, string indirizzo, int oraApertura, int oraChiusura, List<Libro> libri) : this(nome, indirizzo, oraApertura, oraChiusura)
@@ -91,10 +92,10 @@ namespace EsercizioBiblioteca
 
         public List<Libro> GetLibriStessoTitolo(string titolo)
         {
-            List<Libro> libriStessoTitolo;
+            List<Libro> libriStessoTitolo = new List<Libro>();
             foreach (Libro l in _libri)
             {
-                if (titolo.ToLower == l.Titolo.ToLower)
+                if (titolo.ToLower() == l.Titolo.ToLower())
                 {
                     libriStessoTitolo.Add(l);
                 }
@@ -104,10 +105,10 @@ namespace EsercizioBiblioteca
 
         public List<Libro> GetLibriStessoAutore(string autore)
         {
-            List<Libro> libriStessoAutore;
+            List<Libro> libriStessoAutore = new List<Libro>();
             foreach (Libro l in _libri)
             {
-                if (autore.ToLower == l.Autore.ToLower)
+                if (autore.ToLower() == l.Autore.ToLower())
                 {
                     libriStessoAutore.Add(l);
                 }
